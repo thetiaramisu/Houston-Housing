@@ -27,11 +27,13 @@ I generated a model that could predict a proclivity toward flooding within a zip
 
 The final objective was to predict whether or not a listed home will sell. I took the cleaned MLS data and added the column regarding the flood likelihood depending on which zip code the home is located in from the above model.
 
-The highest performing deep learning model ended up being my neural network model using L2 regularization, providing a testing accuracy of 66.79%. L2 regularization is also known as weight decay. This enhanced the baseline neural network model by adding the sum of the squares of all weights in the network to the cost function. This provides the network with the opportunity to learn the smaller weights that are more likely to get overlooked.
+The highest performing deep learning models ended up being the neural network model after dropping the low performing features with a test accuracy of 66.78%. The lowest performing features were determined by the XGBoost following the class balancing, and had little to no influence over the overall model performance.
 
-The initial XGBoost model I made gave a predictive value of 67.71% accuracy. However, I believe that model was overfit due to class imbalance of 2/3 sold as opposed to not sold results. So I used SMOTE (Synthetic Minority Over-sampling Technique) to address the class imbalance by generating synthetic data based on feature space similarities between existing instances in the minority class.
+The second highest performing deep learning model was the neural network model using L2 regularization, providing a testing accuracy of 66.68%. L2 regularization is also known as weight decay. This enhanced the baseline neural network model by adding the sum of the squares of all weights in the network to the cost function. This provides the network with the opportunity to learn the smaller weights that are more likely to get overlooked.
 
-After trying different models and tuning methods, I was able to produce an XGBoost model that delivered 67.62% accuracy in predicting whether or not a home would sell. This ideal model took the XGBoost model after balancing and removed the 10 features with a weight of 0. This is the model I will use as my final model.
+The initial XGBoost model I made gave a predictive value of 67.63% accuracy. However, I believe that model was overfit due to class imbalance of 2/3 sold as opposed to not sold results. So I used SMOTE (Synthetic Minority Over-sampling Technique) to address the class imbalance by generating synthetic data based on feature space similarities between existing instances in the minority class.
+
+After trying different models and tuning methods, I was able to produce an XGBoost model that delivered 67.56% accuracy in predicting whether or not a home would sell. This ideal model took the XGBoost model after balancing and removed the 10 features with a weight of 0. This is the model I will use as my final model.
 
 ## Conclusions
 
